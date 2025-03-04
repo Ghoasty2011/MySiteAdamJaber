@@ -3,18 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Adam Jaber</title>
+    <title>Adam Jaber - Young Programmer Portfolio</title>
+    
+    <!-- SEO and Accessibility Improvements -->
+    <meta name="description" content="Portfolio of Adam Jaber, a 13-year-old programmer from Amman, Jordan, showcasing coding projects and creativity.">
+    <meta name="keywords" content="Adam Jaber, young programmer, coding, projects, Roblox, game development">
+    <meta name="author" content="Adam Jaber">
+    <link rel="canonical" href="https://adamjaber.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
     <style>
-        body {
+        :root {
+            --primary-color: #1E90FF;
+            --secondary-color: #FF6347;
+            --accent-color: #FFD700;
+            --text-color: #333;
+            --background-gradient: linear-gradient(to bottom, #FF6347, #1E90FF);
+        }
+
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #FF6347, #1E90FF);
-            color: black;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: var(--background-gradient);
+            color: var(--text-color);
             line-height: 1.8;
             letter-spacing: 0.5px;
         }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
         header {
-            background-color: #1E90FF;
+            background-color: var(--primary-color);
             color: white;
             text-align: center;
             padding: 20px;
@@ -23,48 +53,83 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             animation: textGlow 3s infinite alternate, fadeIn 2s ease-in-out;
         }
+
         nav {
-            background-color: #FF6347;
+            background-color: var(--secondary-color);
             display: flex;
             justify-content: center;
             padding: 15px;
             animation: slideIn 1.5s ease-out;
         }
+
         nav a {
             margin: 0 20px;
             text-decoration: none;
-            color: #FFD700;
+            color: var(--accent-color);
             font-weight: bold;
             font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.2s ease;
         }
+
         nav a:hover {
             text-decoration: underline;
             color: #87CEFA;
+            transform: scale(1.1);
         }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
         section {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
             padding: 30px;
+            margin: 20px;
             max-width: 800px;
-            margin: 20px auto;
-            text-align: center;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             animation: fadeIn 2s ease-in-out;
         }
-        section p {
-            font-size: 1.5em;
-            color: black;
-        }
-        footer {
-            background-color: #1E90FF;
-            color: white;
+
+        section h1 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
             text-align: center;
-            padding: 15px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            animation: fadeInUp 1.5s ease-out;
-            font-size: 1.2em;
         }
+
+        section p {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .projects-list {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .projects-list li {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .projects-list li:hover {
+            transform: scale(1.05);
+        }
+
         .button {
-            background-color: #FF6347;
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            background-color: var(--secondary-color);
             color: white;
             padding: 15px 25px;
             border: none;
@@ -73,65 +138,106 @@
             font-size: 1.2em;
             transition: transform 0.3s, background-color 0.3s;
         }
+
         .button:hover {
             background-color: #CD5C5C;
-            transform: scale(1.2) rotate(5deg);
+            transform: scale(1.1) rotate(3deg);
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            animation: fadeInUp 1.5s ease-out;
+            font-size: 1.2em;
         }
-        @keyframes slideIn {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+
+        @media (max-width: 768px) {
+            header {
+                font-size: 2em;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                margin: 10px 0;
+            }
         }
-        @keyframes fadeInUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
+
+        /* Animations */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideIn { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        @keyframes fadeInUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
         @keyframes textGlow {
-            from {
-                text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
-            }
-            to {
-                text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6);
-            }
+            from { text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); }
+            to { text-shadow: 0 0 20px rgba(255, 255, 255, 1); }
         }
     </style>
 </head>
 <body>
     <header>
-        Welcome to <span style="color: #FFD700;">Adam Jaber's</span> Website!
+        Welcome to <span style="color: var(--accent-color);">Adam Jaber's</span> Website!
     </header>
-    <nav>
-        <a href="#about">About Me</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <a href="about_me.html">About Me Page</a>
+
+    <nav aria-label="Main Navigation">
+        <a href="#about" aria-label="About Me Section">About Me</a>
+        <a href="#projects" aria-label="Projects Section">Projects</a>
+        <a href="#contact" aria-label="Contact Section">Contact</a>
+        <a href="about_me.html" aria-label="Detailed About Me Page">About Me Page</a>
     </nav>
-    <section id="about">
-        <h1>About Me</h1>
-        <p>Hi! My name is Adam Jaber, and I am a 13-year-old programmer from Amman, Jordan. I love coding, solving puzzles, and creating fun projects. My goal is to share my creativity with the world through programming!</p>
-    </section>
-    <section id="projects">
-        <h1>My Projects</h1>
-        <p>Here are a few of my favorite projects:</p>
-        <ul>
-            <li>Shape Escape - A fun and challenging game about dodging shapes.</li>
-            <li>Math Teacher - A program to help students learn math and geometry.</li>
-            <li>HTCPH - A health-related app for calculating BMI and more.</li>
-            <li><a href="https://www.roblox.com/games/135596453747186/Matrix-Parkour" style="color: #FFD700; text-decoration: none;">Roblox Parkour</a> - Exploring the exciting world of parkour in Roblox Studio.</li>
-        </ul>
-        <button class="button" onclick="alert('More projects coming soon!')">See More</button>
-    </section>
-    <section id="contact">
-        <h1>Contact Me:</h1>
-        <p>You can reach me via email at <a href="mailto:adamgammer2011@gmail.com" style="color: #FFD700;">adamgammer2011@gmail.com</a>. Contact me</p>
-    </section>
+
+    <main class="container">
+        <section id="about" aria-labelledby="about-title">
+            <h1 id="about-title">About Me</h1>
+            <p>Hi! My name is Adam Jaber, and I am a 13-year-old programmer from Amman, Jordan. I love coding, solving puzzles, and creating fun projects. My goal is to share my creativity with the world through programming!</p>
+        </section>
+
+        <section id="projects" aria-labelledby="projects-title">
+            <h1 id="projects-title">My Projects</h1>
+            <p>Here are a few of my favorite projects:</p>
+            <ul class="projects-list">
+                <li>Shape Escape - A fun and challenging game about dodging shapes</li>
+                <li>Math Teacher - A program to help students learn math and geometry</li>
+                <li>HTCPH - A health-related app for calculating BMI and more</li>
+                <li>
+                    <a href="https://www.roblox.com/games/135596453747186/Matrix-Parkour" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       style="color: white; text-decoration: none;">
+                        Roblox Parkour
+                    </a>
+                </li>
+            </ul>
+            <button 
+                class="button" 
+                onclick="alert('More projects coming soon!')" 
+                aria-label="See More Projects">
+                See More
+            </button>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-title">
+            <h1 id="contact-title">Contact Me</h1>
+            <p>You can reach me via email at <a href="mailto:adamgammer2011@gmail.com" style="color: var(--accent-color);">adamgammer2011@gmail.com</a>.</p>
+        </section>
+    </main>
+
     <footer>
         &copy; 2024 Adam Jaber. All rights reserved.
     </footer>
+
+    <script>
+        // Simple analytics placeholder
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Page loaded successfully');
+        });
+    </script>
 </body>
 </html>
-
-
